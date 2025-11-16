@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiences - Stéphane</title>
+    <script src="assets/js/tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .timeline-item {
+            opacity: 0;
+            animation: slideIn 0.6s forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .timeline-item:nth-child(odd) {
+            transform: translateX(-50px);
+        }
+
+        .timeline-item:nth-child(even) {
+            transform: translateX(50px);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+<!-- Navigation -->
+<nav class="fixed top-0 w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <a href="index.html" class="text-2xl font-bold text-primary dark:text-primary-light">
+                Stéphane
+            </a>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html"
+                   class="nav-link text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-primary-light">About</a>
+                <a href="services.html"
+                   class="nav-link text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-primary-light">Services</a>
+                <a href="experiences.html"
+                   class="nav-link active text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-primary-light">Experiences</a>
+                <a href="projects.html"
+                   class="nav-link text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-primary-light">Projects</a>
+                <a href="academic.html"
+                   class="nav-link text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-primary-light">Academic</a>
+                <a href="events.html"
+                   class="nav-link text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-primary-light">Events</a>
+                <a href="lectures.html"
+                   class="nav-link text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-primary-light">Lectures</a>
+                <a href="https://blog.example.com" target="_blank"
+                   class="nav-link text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-primary-light">Blog
+                    ↗</a>
+            </div>
+
+            <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                </svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                          fill-rule="evenodd" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 dark:border-gray-800">
+        <div class="px-4 pt-2 pb-3 space-y-1">
+            <a href="index.html"
+               class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800">About</a>
+            <a href="services.html"
+               class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800">Services</a>
+            <a href="experiences.html"
+               class="block px-3 py-2 rounded-md text-base font-medium bg-gray-100 dark:bg-gray-800 text-primary">Experiences</a>
+            <a href="projects.html"
+               class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800">Projects</a>
+            <a href="academic.html"
+               class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800">Academic</a>
+            <a href="events.html"
+               class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800">Events</a>
+            <a href="lectures.html"
+               class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800">Lectures</a>
+            <a href="https://blog.example.com" target="_blank"
+               class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800">Blog
+                ↗</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<section class="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto text-center">
+        <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
+            Professional Experience
+        </h1>
+        <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            My career journey and professional steps
+        </p>
+    </div>
+</section>
+
+<!-- Timeline -->
+<section class="py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+        <div id="experiences-container" class="relative">
+            <!-- Vertical line -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-300 dark:bg-gray-700 hidden md:block"></div>
+
+            <!-- Loading state -->
+            <div class="text-center py-12">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                <p class="mt-4 text-gray-600 dark:text-gray-400">Loading experiences...</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-8 px-4 sm:px-6 lg:px-8 border-t border-gray-200 dark:border-gray-800 mt-20">
+    <div class="max-w-7xl mx-auto text-center text-gray-600 dark:text-gray-400">
+        <p>&copy; 2025 Stephane Fedim. All rights reserved.</p>
+    </div>
+</footer>
+
+<script type="module" src="assets/js/experiences.js"></script>
+</body>
+</html>
