@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiences - Stephane Fedim</title>
+    <title>Academic - Stephane Fedim</title>
     <script src="assets/js/tailwind-config.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -34,24 +34,31 @@
             width: 100%;
         }
 
-        .timeline-item {
-            opacity: 0;
-            animation: slideIn 0.6s forwards;
+        .academic-card {
+            transition: all 0.3s;
         }
 
-        @keyframes slideIn {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .academic-card:hover {
+            transform: translateX(8px);
         }
 
-        .timeline-item:nth-child(odd) {
-            transform: translateX(-50px);
+        .tab-btn {
+            position: relative;
+            transition: all 0.3s;
         }
 
-        .timeline-item:nth-child(even) {
-            transform: translateX(50px);
+        .tab-btn.active {
+            color: #1e3a8a;
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #1e3a8a;
         }
     </style>
 </head>
@@ -71,11 +78,11 @@
                 <a href="services.html"
                    class="nav-link text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-primary-light">Services</a>
                 <a href="experiences.html"
-                   class="nav-link active text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-primary-light">Experiences</a>
+                   class="nav-link text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-primary-light">Experiences</a>
                 <a href="projects.html"
                    class="nav-link text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-primary-light">Projects</a>
                 <a href="academic.html"
-                   class="nav-link text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-primary-light">Academic</a>
+                   class="nav-link active text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-primary-light">Academic</a>
                 <a href="events.html"
                    class="nav-link text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-primary-light">Events</a>
                 <a href="lectures.html"
@@ -111,11 +118,11 @@
             <a href="services.html"
                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800">Services</a>
             <a href="experiences.html"
-               class="block px-3 py-2 rounded-md text-base font-medium bg-gray-100 dark:bg-gray-800 text-primary">Experiences</a>
+               class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800">Experiences</a>
             <a href="projects.html"
                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800">Projects</a>
             <a href="academic.html"
-               class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800">Academic</a>
+               class="block px-3 py-2 rounded-md text-base font-medium bg-gray-100 dark:bg-gray-800 text-primary">Academic</a>
             <a href="events.html"
                class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800">Events</a>
             <a href="lectures.html"
@@ -131,25 +138,49 @@
 <section class="pt-32 pb-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto text-center">
         <h1 class="text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
-            Professional Experience
+            Academic Work
         </h1>
         <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            My career journey and professional steps
+            Education and research contributions
         </p>
     </div>
 </section>
 
-<!-- Timeline -->
-<section class="py-12 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-5xl mx-auto">
-        <div id="experiences-container" class="relative">
-            <!-- Vertical line -->
-            <div class="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-300 dark:bg-gray-700 hidden md:block"></div>
+<!-- Tabs -->
+<section class="py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex justify-center border-b border-gray-200 dark:border-gray-700">
+            <button class="tab-btn active px-6 py-3 font-semibold" data-tab="formations">
+                Formations
+            </button>
+            <button class="tab-btn px-6 py-3 font-semibold text-gray-600 dark:text-gray-400" data-tab="publications">
+                Publications
+            </button>
+        </div>
+    </div>
+</section>
 
+<!-- Formations Section -->
+<section id="formations-section" class="py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+        <div id="formations-container">
             <!-- Loading state -->
             <div class="text-center py-12">
                 <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-                <p class="mt-4 text-gray-600 dark:text-gray-400">Loading experiences...</p>
+                <p class="mt-4 text-gray-600 dark:text-gray-400">Loading formations...</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Publications Section -->
+<section id="publications-section" class="hidden py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+        <div id="publications-container">
+            <!-- Loading state -->
+            <div class="text-center py-12">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+                <p class="mt-4 text-gray-600 dark:text-gray-400">Loading publications...</p>
             </div>
         </div>
     </div>
@@ -162,6 +193,6 @@
     </div>
 </footer>
 
-<script type="module" src="assets/js/experiences.js"></script>
+<script type="module" src="assets/js/academic.js"></script>
 </body>
 </html>
