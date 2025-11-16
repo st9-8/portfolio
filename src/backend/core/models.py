@@ -27,6 +27,8 @@ class Experience(models.Model):
 
 class Project(models.Model):
     name: models.CharField = models.CharField(max_length=255)
+    image: models.ForeignKey = models.ForeignKey('core.Image', on_delete=models.SET_NULL, related_name='projects',
+                                                 blank=True, null=True)
     description: models.TextField = models.TextField(blank=True)
     link: models.URLField = models.URLField(blank=True, null=True)
     experience: models.ForeignKey = models.ForeignKey(Experience, on_delete=models.SET_NULL, blank=True, null=True)

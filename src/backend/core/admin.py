@@ -22,8 +22,20 @@ class ExperienceAdmin(admin.ModelAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ('name', 'link')
+    list_display = ('name', 'link', 'image_preview')
     search_fields = ('name',)
+
+    readonly_fields = ('image_preview',)
+
+    def image_preview(self, obj):
+        if obj.image and obj.image.file:
+            return format_html(
+                '<img src="{}" style="max-width: 200px; max-height: 200px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />',
+                obj.image.file.url
+            )
+        return "No image selected"
+
+    image_preview.short_description = "Preview"
 
 
 class EventAdminForm(forms.ModelForm):
@@ -170,7 +182,7 @@ class ServiceAdmin(admin.ModelAdmin):
                 '<img src="{}" style="max-width: 200px; max-height: 200px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />',
                 obj.image.file.url
             )
-        return "Aucune image sélectionnée"
+        return "No image selected"
 
     image_preview.short_description = "Preview"
 

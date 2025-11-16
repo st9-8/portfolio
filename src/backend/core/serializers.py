@@ -24,9 +24,11 @@ class ExperienceSerializer(serializers.ModelSerializer):
 
 
 class ProjectSerializer(serializers.ModelSerializer):
+    image = ImageSerializer()
+
     class Meta:
         model = Project
-        fields = ('id', 'name', 'description', 'link', 'experience', 'technologies')
+        fields = ('id', 'name', 'image', 'description', 'link', 'experience', 'technologies')
 
 
 class EventSerializer(serializers.ModelSerializer):
@@ -34,7 +36,8 @@ class EventSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Event
-        fields = ('id', 'name', 'title', 'event_type', 'description', 'start_date', 'end_date', 'location', 'source_website', 'images')
+        fields = ('id', 'name', 'title', 'event_type', 'description', 'start_date', 'end_date', 'location',
+                  'source_website', 'images')
 
 
 class PublicationSerializer(serializers.ModelSerializer):
