@@ -123,3 +123,14 @@ class Lecture(models.Model):
 
 class Image(models.Model):
     file = models.ImageField(upload_to='images/')
+
+
+class Me(models.Model):
+    """
+        My own model for details
+    """
+
+    title: models.CharField = models.CharField(max_length=255)
+    bio: models.TextField = models.TextField()
+    background: models.TextField = models.TextField()
+    picture: models.ImageField = models.ImageField(upload_to='pp/')
