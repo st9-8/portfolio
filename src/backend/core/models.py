@@ -63,7 +63,7 @@ class Publication(models.Model):
     abstract: models.TextField = models.TextField(blank=True)
     link: models.URLField = models.URLField(blank=True, null=True)
     pub_date: models.DateField = models.DateField()
-    full_document: models.FileField = models.FileField(upload_to='publications/')
+    full_document: models.FileField = models.FileField(upload_to='publications/', blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -87,7 +87,7 @@ class Formation(models.Model):
 
 class Technology(models.Model):
     name: models.CharField = models.CharField(max_length=255)
-    icon: models.ImageField = models.ImageField(upload_to='tech_icons/')
+    icon: models.ImageField = models.ImageField(upload_to='tech_icons/', blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -112,7 +112,7 @@ class Lecture(models.Model):
     school: models.CharField = models.CharField(max_length=255)
     start_date: models.DateField = models.DateField()
     end_date: models.DateField = models.DateField(blank=True, null=True)
-    syllabus: models.FileField = models.FileField(upload_to='syllabus')
+    syllabus: models.FileField = models.FileField(upload_to='syllabus', blank=True, null=True)
 
     def __str__(self):
         return self.name
