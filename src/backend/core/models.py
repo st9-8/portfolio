@@ -10,7 +10,7 @@ class Experience(models.Model):
     title: models.CharField = models.CharField(max_length=255)
     organisation: models.CharField = models.CharField(max_length=255)
     start_date: models.DateField = models.DateField()
-    end_date: models.DateField = models.DateField()
+    end_date: models.DateField = models.DateField(blank=True, null=True)
     description: models.TextField = models.TextField(blank=True)
     contract_type: models.CharField = models.CharField(max_length=255, choices=ContractTypeEnum.choices(), blank=True,
                                                        null=True)
