@@ -134,3 +134,8 @@ class Me(models.Model):
     bio: models.TextField = models.TextField()
     background: models.TextField = models.TextField()
     picture: models.ImageField = models.ImageField(upload_to='pp/')
+    email: models.EmailField = models.EmailField(blank=True)
+    github_link: models.URLField = models.URLField(blank=True)
+    linkedin_link: models.URLField = models.URLField(blank=True)
+    x_link: models.URLField = models.URLField(blank=True)
+    upwork_link: models.URLField = models.URLField(blank=True)
