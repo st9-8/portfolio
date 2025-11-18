@@ -5,13 +5,53 @@ from core.enums import EventTypeEnum
 from core.enums import ContractTypeEnum
 from core.enums import WorkTypePlaceEnum
 
+from django_prose_editor.fields import ProseEditorField
+
+rich_text_fields_data = {
+    # Core text formatting
+    "Bold": True,
+    "Italic": True,
+    "Strike": True,
+    "Underline": True,
+    "HardBreak": True,
+
+    # Structure
+    "Heading": {
+        "levels": [1, 2, 3]  # Only allow h1, h2, h3
+    },
+    "BulletList": True,
+    "OrderedList": True,
+    "ListItem": True,  # Used by BulletList and OrderedList
+    "Blockquote": True,
+
+    # Advanced extensions
+    "Link": {
+        "enableTarget": True,  # Enable "open in new window"
+        "protocols": ["http", "https", "mailto"],  # Limit protocols
+    },
+    "Table": True,
+    "TableRow": True,
+    "TableHeader": True,
+    "TableCell": True,
+
+    # Editor capabilities
+    "History": True,  # Enables undo/redo
+    "HTML": True,  # Allows HTML view
+    "Typographic": True,  # Enables typographic chars
+}
+
 
 class Experience(models.Model):
     title: models.CharField = models.CharField(max_length=255)
     organisation: models.CharField = models.CharField(max_length=255)
     start_date: models.DateField = models.DateField()
     end_date: models.DateField = models.DateField(blank=True, null=True)
-    description: models.TextField = models.TextField(blank=True)
+    description: ProseEditorField = ProseEditorField(
+        extensions={
+            **rich_text_fields_data
+        },
+        sanitize=True
+    )
     contract_type: models.CharField = models.CharField(max_length=255, choices=ContractTypeEnum.choices(), blank=True,
                                                        null=True)
     location: models.CharField = models.CharField(max_length=255)
@@ -29,7 +69,12 @@ class Project(models.Model):
     name: models.CharField = models.CharField(max_length=255)
     image: models.ForeignKey = models.ForeignKey('core.Image', on_delete=models.SET_NULL, related_name='projects',
                                                  blank=True, null=True)
-    description: models.TextField = models.TextField(blank=True)
+    description: ProseEditorField = ProseEditorField(
+        extensions={
+            **rich_text_fields_data
+        },
+        sanitize=True
+    )
     link: models.URLField = models.URLField(blank=True, null=True)
     experience: models.ForeignKey = models.ForeignKey(Experience, on_delete=models.SET_NULL, blank=True, null=True)
     technologies: models.CharField = models.CharField(max_length=255, blank=True,
@@ -42,7 +87,12 @@ class Project(models.Model):
 class Event(models.Model):
     name: models.CharField = models.CharField(max_length=255)
     title: models.CharField = models.CharField(max_length=255, help_text='My title at that event')
-    description: models.TextField = models.TextField(blank=True)
+    description: ProseEditorField = ProseEditorField(
+        extensions={
+            **rich_text_fields_data
+        },
+        sanitize=True
+    )
     event_type: models.CharField = models.CharField(max_length=255, choices=EventTypeEnum.choices())
     start_date: models.DateField = models.DateField()
     end_date: models.DateField = models.DateField(blank=True, null=True)
@@ -95,7 +145,12 @@ class Technology(models.Model):
 
 class Service(models.Model):
     name: models.CharField = models.CharField(max_length=255)
-    description: models.TextField = models.TextField(blank=True)
+    description: ProseEditorField = ProseEditorField(
+        extensions={
+            **rich_text_fields_data
+        },
+        sanitize=True
+    )
     image: models.ForeignKey = models.ForeignKey('core.Image', on_delete=models.SET_NULL, related_name='services',
                                                  blank=True, null=True)
 
@@ -108,7 +163,12 @@ class Service(models.Model):
 
 class Lecture(models.Model):
     name: models.CharField = models.CharField(max_length=255)
-    description: models.TextField = models.TextField(blank=True)
+    description: ProseEditorField = ProseEditorField(
+        extensions={
+            **rich_text_fields_data
+        },
+        sanitize=True
+    )
     school: models.CharField = models.CharField(max_length=255)
     start_date: models.DateField = models.DateField()
     end_date: models.DateField = models.DateField(blank=True, null=True)

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'drf_spectacular_sidecar',
     'corsheaders',
+    'django_prose_editor',
 
     'core',
 ]

@@ -9,6 +9,7 @@ dependencies = [
     "django==4.2",
     "django-cors-headers>=4.9.0",
     "django-filter>=25.1",
+    "django-prose-editor[sanitize]>=0.22.2",
     "djangorestframework>=3.16.1",
     "drf-exceptions-hog>=0.4.0",
     "drf-spectacular[sidecar]>=0.29.0",
