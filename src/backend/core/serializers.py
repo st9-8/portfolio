@@ -20,7 +20,7 @@ class ImageSerializer(serializers.ModelSerializer):
 class ExperienceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Experience
-        fields = ('id', 'title', 'organisation', 'start_date', 'end_date', 'description', 'contract_type')
+        fields = ('id', 'title', 'organisation', 'location', 'start_date', 'end_date', 'description', 'contract_type')
 
 
 class ProjectSerializer(serializers.ModelSerializer):
