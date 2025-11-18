@@ -15,7 +15,7 @@ class WorkTypeEnum(SimpleEnum):
 
 class WorkTypePlaceEnum(SimpleEnum):
     ON_SITE = 'ON_SITE'
-    PART_TIME = 'REMOTE'
+    REMOTE = 'REMOTE'
     HYBRID = 'HYBRID'
 
 
