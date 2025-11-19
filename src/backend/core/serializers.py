@@ -43,7 +43,7 @@ class EventSerializer(serializers.ModelSerializer):
 class PublicationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Publication
-        fields = ('id', 'name', 'authors', 'abstract', 'link', 'pub_date', 'full_document')
+        fields = ('id', 'name', 'authors', 'abstract', 'link', 'pub_date', 'keywords', 'full_document')
 
 
 class FormationSerializer(serializers.ModelSerializer):

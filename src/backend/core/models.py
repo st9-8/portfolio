@@ -114,6 +114,7 @@ class Publication(models.Model):
     link: models.URLField = models.URLField(blank=True, null=True)
     pub_date: models.DateField = models.DateField()
     full_document: models.FileField = models.FileField(upload_to='publications/', blank=True, null=True)
+    keywords: models.CharField = models.CharField(max_length=255, blank=True, help_text='Comma-separated keywords')
 
     def __str__(self):
         return self.name
