@@ -9,6 +9,31 @@ function formatDate(dateString) {
     return date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
 }
 
+function renderKeywords(keywords) {
+    if (!keywords) {
+        return '';
+    }
+
+    const tags = keywords
+        .split(',')
+        .map((keyword) => keyword.trim())
+        .filter((keyword) => keyword.length);
+
+    if (!tags.length) {
+        return '';
+    }
+
+    return `
+        <div class="flex flex-wrap gap-2 mb-4">
+            ${tags.map((keyword) => `
+                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-primary dark:text-primary-light rounded-full text-sm font-medium">
+                    ${keyword}
+                </span>
+            `).join('')}
+        </div>
+    `;
+}
+
 function initTabs() {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const formationsSection = document.getElementById('formations-section');
@@ -176,6 +201,7 @@ async function loadPublications() {
                 <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
                     ${pub.abstract}
                 </p>
+                ${renderKeywords(pub.keywords)}
                 <div class="flex flex-wrap gap-3">
                     ${pub.link ? `
                         <a href="${pub.link}" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-white rounded-lg transition-colors">
