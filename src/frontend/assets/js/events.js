@@ -297,9 +297,9 @@ async function loadEvents() {
                             ` : ''}
                         </div>
 
-                        <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed flex-1">
+                        <div class="text-gray-600 dark:text-gray-400 text-sm mb-4 leading-relaxed flex-1">
                             ${event.description}
-                        </p>
+                        </div>
 
                         <div class="flex flex-wrap gap-3 mt-auto pt-2">
                             ${event.source_website ? `
