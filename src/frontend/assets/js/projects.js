@@ -84,7 +84,7 @@ async function loadProjects() {
             const hasLink = Boolean(project.link);
 
             return `
-                <div class="project-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
+                <div class="project-card bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col h-full">
                     <div class="project-media bg-gray-100 dark:bg-gray-900">
                         <img src="${imageSrc}" alt="${project.name}" class="project-image w-full h-full object-cover">
                     </div>
@@ -106,14 +106,14 @@ async function loadProjects() {
                     </div>
 
                     ${hasLink ? `
-                        <a href="${project.link}" target="_blank" class="border-2 border-primary inline-flex items-center justify-center gap-2 w-full px-4 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg transition-colors font-medium">
+                        <a href="${project.link}" target="_blank" class="mt-auto border-2 border-primary inline-flex items-center justify-center gap-2 w-full px-4 py-3 bg-primary hover:bg-primary-dark text-white rounded-lg transition-colors font-medium">
                             View Project
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                             </svg>
                         </a>
                     ` : `
-                        <span class="inline-flex items-center justify-center w-full px-4 py-3 border border-dashed border-gray-300 dark:border-gray-700 rounded-lg text-sm text-gray-500 dark:text-gray-400">
+                        <span class="mt-auto inline-flex items-center justify-center w-full px-4 py-3 border border-dashed border-gray-300 dark:border-gray-700 rounded-lg text-sm text-gray-500 dark:text-gray-400">
                             Project link coming soon
                         </span>
                     `}

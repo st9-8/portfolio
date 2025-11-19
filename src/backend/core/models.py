@@ -59,7 +59,7 @@ class Experience(models.Model):
     work_place_type: models.CharField = models.CharField(max_length=255, choices=WorkTypePlaceEnum.choices())
 
     def __str__(self):
-        return self.title
+        return f'{self.title} - {self.organisation}'
 
     class Meta:
         ordering = ('-start_date',)
@@ -142,6 +142,9 @@ class Technology(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = 'Technologies'
+
 
 class Service(models.Model):
     name: models.CharField = models.CharField(max_length=255)
@@ -199,3 +202,10 @@ class Me(models.Model):
     linkedin_link: models.URLField = models.URLField(blank=True)
     x_link: models.URLField = models.URLField(blank=True)
     upwork_link: models.URLField = models.URLField(blank=True)
+
+
+    def __str__(self):
+        return 'Me'
+
+    class Meta:
+        verbose_name_plural = 'Me'
