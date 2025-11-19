@@ -99,17 +99,6 @@
                     ↗</a>
             </div>
 
-            <!-- Theme Toggle -->
-            <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
-                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                </svg>
-                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                          fill-rule="evenodd" clip-rule="evenodd"></path>
-                </svg>
-            </button>
-
             <!-- Mobile menu button -->
             <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -148,20 +137,20 @@
 <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="section-fade">
+            <div class="section-fade order-2 md:order-1 text-center md:text-left flex flex-col items-center md:items-start">
                 <h1 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent">
                     Hi, I'm Stephane
                 </h1>
                 <h2 class="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-6">
                     Software Developer & Researcher
                 </h2>
-                <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-2xl">
                     Passionate about new technologies and their impact on our daily life, this motivated me to join
                     the field to build scalable solutions to help people in their daily life and to contribute to
                     research in for accessible Speech and Natural Language technologies for African. Meanwhile, I
                     discovered a passion for teaching, which led me to teach sometimes.
                 </p>
-                <div class="flex flex-wrap gap-4">
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
                     <a href="#contact"
                        class="px-6 py-3 border-2 border-primary bg-primary hover:bg-primary-dark text-white rounded-lg transition-colors font-medium">
                         Get in Touch
@@ -173,7 +162,7 @@
                 </div>
             </div>
 
-            <div class="section-fade flex justify-center">
+            <div class="section-fade flex justify-center order-1 md:order-2">
                 <div class="relative">
                     <div class="w-80 h-80 rounded-full opacity-20 absolute -top-4 -left-4"></div>
                     <div class="w-80 h-80 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center relative">
@@ -245,7 +234,7 @@
             <a href="experiences.html"
                class="card-hover p-8 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
                 <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                               d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
@@ -257,7 +246,7 @@
             <a href="projects.html"
                class="card-hover p-8 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
                 <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                               d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                     </svg>
@@ -269,7 +258,7 @@
             <a href="academic.html"
                class="card-hover p-8 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
                 <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-10 h-10 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                               d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                     </svg>
