@@ -249,7 +249,7 @@ async function loadEvents() {
                                 ${imageCount ? `data-carousel-index="${index}"` : 'disabled'}>
                             <img src="${mainImage}"
                                  alt="${event.name}"
-                                 class="event-image w-full h-full object-cover">
+                                 class="event-image w-full h-full object-contain">
                             ${imageCount ? `
                                 <span class="image-count-badge">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
