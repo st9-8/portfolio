@@ -256,7 +256,7 @@
             </div>
 
             <div class="flex items-center gap-2">
-                <button id="theme-toggle" type="button" name="toggle-button"
+                <button id="theme-toggle" type="button" name="toggle-button" aria-label="Toggle theme"
                         class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                     <svg id="theme-toggle-dark-icon" class="w-5 h-5 text-gray-900 dark:text-white" fill="currentColor"
                          viewBox="0 0 20 20">
@@ -270,7 +270,7 @@
                     </svg>
                 </button>
 
-                <button id="mobile-menu-btn" name="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                <button id="mobile-menu-btn" name="mobile-menu-btn" aria-label="Toggle navigation menu" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
                     <svg class="w-6 h-6 text-gray-900 dark:text-white" fill="none" stroke="currentColor"
                          viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -341,7 +341,7 @@
 <!-- Carousel Modal -->
 <div id="carousel-modal" class="carousel-modal hidden">
     <div class="carousel-content">
-        <button type="button" name="carousel-close" class="carousel-close" data-carousel-close>&times;</button>
+        <button type="button" name="carousel-close" class="carousel-close" data-carousel-close aria-label="Close carousel">&times;</button>
         <div class="carousel-header">
             <h3 data-carousel-title class="text-lg font-semibold"></h3>
             <span data-carousel-counter class="carousel-counter"></span>
