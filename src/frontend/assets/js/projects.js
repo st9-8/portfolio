@@ -1,8 +1,13 @@
-import { BASE_URL } from './config.js';
-import { initMobileMenu, initThemeToggle } from './common/ui.js';
+(() => {
+    const core = window.SiteCore;
+    if (!core) {
+        return;
+    }
 
-initThemeToggle();
-initMobileMenu();
+    const { BASE_URL, initMobileMenu, initThemeToggle } = core;
+
+    initThemeToggle();
+    initMobileMenu();
 
 async function loadProjects() {
     try {
@@ -86,6 +91,11 @@ async function loadProjects() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadProjects();
-});
+    window.addEventListener('load', () => {
+        if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(loadProjects, { timeout: 2000 });
+        } else {
+            window.setTimeout(loadProjects, 300);
+        }
+    });
+})();

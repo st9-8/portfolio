@@ -1,8 +1,13 @@
-import { BASE_URL } from './config.js';
-import { initMobileMenu, initThemeToggle } from './common/ui.js';
+(() => {
+    const core = window.SiteCore;
+    if (!core) {
+        return;
+    }
 
-initThemeToggle();
-initMobileMenu();
+    const { BASE_URL, initMobileMenu, initThemeToggle } = core;
+
+    initThemeToggle();
+    initMobileMenu();
 
 function formatDate(dateString) {
     const date = new Date(dateString);
@@ -115,6 +120,11 @@ async function loadExperiences() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadExperiences();
-});
+    window.addEventListener('load', () => {
+        if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(loadExperiences, { timeout: 2000 });
+        } else {
+            window.setTimeout(loadExperiences, 300);
+        }
+    });
+})();

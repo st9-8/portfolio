@@ -1,8 +1,13 @@
-import { BASE_URL } from './config.js';
-import { initMobileMenu, initThemeToggle } from './common/ui.js';
+(() => {
+    const core = window.SiteCore;
+    if (!core) {
+        return;
+    }
 
-initThemeToggle();
-initMobileMenu();
+    const { BASE_URL, initMobileMenu, initThemeToggle } = core;
+
+    initThemeToggle();
+    initMobileMenu();
 
 function formatDate(dateString) {
     const date = new Date(dateString);
@@ -198,8 +203,20 @@ async function loadPublications() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    initTabs();
-    loadFormations();
-    loadPublications();
-});
+    window.addEventListener('DOMContentLoaded', () => {
+        initTabs();
+    });
+
+    window.addEventListener('load', () => {
+        const scheduleFormations = () => {
+            if ('requestIdleCallback' in window) {
+                window.requestIdleCallback(loadFormations, { timeout: 2000 });
+                window.requestIdleCallback(loadPublications, { timeout: 2200 });
+            } else {
+                window.setTimeout(loadFormations, 300);
+                window.setTimeout(loadPublications, 400);
+            }
+        };
+        scheduleFormations();
+    });
+})();
