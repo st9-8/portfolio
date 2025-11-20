@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events - Stephane Fedim</title>
+    <script>
+        (function () {
+            try {
+                const storedTheme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            } catch (error) {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
     <meta name="description" content="Explore conferences, summits, and workshops where Stephane Fedim speaks, attends, or leads sessions across AI, software, and tech communities.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Events - Stephane Fedim">
