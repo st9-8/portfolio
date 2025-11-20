@@ -211,3 +211,5 @@ __marimo__/
 
 # Javascript
 node_modules/
+**/app.css
+**/*-lock.json

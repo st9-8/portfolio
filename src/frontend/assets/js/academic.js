@@ -26,7 +26,7 @@ function renderKeywords(keywords) {
     return `
         <div class="flex flex-wrap gap-2 mb-4">
             ${tags.map((keyword) => `
-                <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-primary dark:text-primary-light rounded-full text-sm font-medium">
+                <span class="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
                     ${keyword}
                 </span>
             `).join('')}
@@ -48,10 +48,10 @@ function initTabs() {
             const tab = btn.dataset.tab;
 
             tabBtns.forEach((b) => {
-                b.classList.remove('active', 'text-primary');
+                b.classList.remove('active');
                 b.classList.add('text-gray-600', 'dark:text-gray-400');
             });
-            btn.classList.add('active', 'text-primary');
+            btn.classList.add('active');
             btn.classList.remove('text-gray-600', 'dark:text-gray-400');
 
             if (tab === 'formations') {
@@ -67,33 +67,33 @@ function initTabs() {
 
 async function loadFormations() {
     try {
-         const response = await fetch(BASE_URL + '/api/formations/');
-         var formations = await response.json();
-         formations = formations?.results ?? [];
+//         const response = await fetch(BASE_URL + '/api/formations/');
+//         var formations = await response.json();
+//         formations = formations?.results ?? [];
 
-//        const formations = [
-//            {
-//                id: 1,
-//                name: 'Ph.D. in Computational Linguistics',
-//                school: 'University of Technology',
-//                start_date: '2020-09-01',
-//                end_date: null
-//            },
-//            {
-//                id: 2,
-//                name: 'Master in Computer Science',
-//                school: 'National Polytechnic School',
-//                start_date: '2015-09-01',
-//                end_date: '2017-06-30'
-//            },
-//            {
-//                id: 3,
-//                name: 'Bachelor in Software Engineering',
-//                school: 'Institute of Technology',
-//                start_date: '2012-09-01',
-//                end_date: '2015-06-30'
-//            }
-//        ];
+        const formations = [
+            {
+                id: 1,
+                name: 'Ph.D. in Computational Linguistics',
+                school: 'University of Technology',
+                start_date: '2020-09-01',
+                end_date: null
+            },
+            {
+                id: 2,
+                name: 'Master in Computer Science',
+                school: 'National Polytechnic School',
+                start_date: '2015-09-01',
+                end_date: '2017-06-30'
+            },
+            {
+                id: 3,
+                name: 'Bachelor in Software Engineering',
+                school: 'Institute of Technology',
+                start_date: '2012-09-01',
+                end_date: '2015-06-30'
+            }
+        ];
 
         const container = document.getElementById('formations-container');
         if (!container) {
@@ -116,7 +116,7 @@ async function loadFormations() {
                 <div class="academic-card mb-6 p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
                     <div class="flex items-start justify-between mb-3">
                         <div class="flex-1">
-                            <h3 class="text-2xl font-bold mb-2 text-primary dark:text-primary-light">
+                            <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
                                 ${formation.name}
                             </h3>
                             <p class="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">
@@ -163,7 +163,7 @@ async function loadPublications() {
 
         container.innerHTML = publications.map((pub) => `
             <div class="academic-card mb-6 p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
-                <h3 class="text-2xl font-bold mb-2 text-primary dark:text-primary-light">
+                <h3 class="text-2xl font-bold mb-2 text-gray-900 dark:text-white">
                     ${pub.name}
                 </h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
@@ -175,7 +175,7 @@ async function loadPublications() {
                 ${renderKeywords(pub.keywords)}
                 <div class="flex flex-wrap gap-3">
                     ${pub.link ? `
-                        <a href="${pub.link}" target="_blank" class="cta-outline inline-flex items-center gap-2 px-4 py-2 border-2 border-primary text-primary hover:bg-primary hover:text-white dark:hover:bg-primary-dark rounded-lg transition-colors">
+                        <a href="${pub.link}" target="_blank" class="cta-outline inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-lg transition-colors">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                             </svg>
@@ -183,7 +183,7 @@ async function loadPublications() {
                         </a>
                     ` : ''}
                     ${pub.full_document ? `
-                        <a href="${pub.full_document}" target="_blank" class="cta-outline inline-flex items-center gap-2 px-4 py-2 border-2 border-primary text-primary hover:bg-primary hover:text-white rounded-lg transition-colors">
+                        <a href="${pub.full_document}" target="_blank" class="cta-outline inline-flex items-center gap-2 px-4 py-2 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-lg transition-colors">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                             </svg>
