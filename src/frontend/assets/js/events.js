@@ -147,7 +147,7 @@ async function loadEvents() {
             return `
                 <div class="event-card bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col">
                     <div class="event-image-wrapper bg-gray-100 dark:bg-gray-700">
-                        <button type="button"
+                        <button type="button" name="carousel-button"
                                 class="event-image-trigger"
                                 ${imageCount ? `data-carousel-index="${index}"` : 'disabled'}>
                             <img src="${mainImage}"

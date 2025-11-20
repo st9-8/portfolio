@@ -270,7 +270,7 @@
                     </svg>
                 </button>
 
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+                <button id="mobile-menu-btn" name="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
                     <svg class="w-6 h-6 text-gray-900 dark:text-white" fill="none" stroke="currentColor"
                          viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -339,7 +339,7 @@
 <!-- Carousel Modal -->
 <div id="carousel-modal" class="carousel-modal hidden">
     <div class="carousel-content">
-        <button type="button" class="carousel-close" data-carousel-close>&times;</button>
+        <button type="button" name="carousel-close" class="carousel-close" data-carousel-close>&times;</button>
         <div class="carousel-header">
             <h3 data-carousel-title class="text-lg font-semibold"></h3>
             <span data-carousel-counter class="carousel-counter"></span>
@@ -347,10 +347,10 @@
         <div class="carousel-image-container">
             <img data-carousel-image src="" alt="">
             <div class="carousel-controls">
-                <button type="button" class="carousel-button" data-carousel-prev aria-label="Previous image">
+                <button type="button" name="carousel-prev-button" class="carousel-button" data-carousel-prev aria-label="Previous image">
                     &#10094;
                 </button>
-                <button type="button" class="carousel-button" data-carousel-next aria-label="Next image">
+                <button type="button" name="carousel-next-button" class="carousel-button" data-carousel-next aria-label="Next image">
                     &#10095;
                 </button>
             </div>
