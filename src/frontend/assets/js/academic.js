@@ -67,33 +67,33 @@ function initTabs() {
 
 async function loadFormations() {
     try {
-//         const response = await fetch(BASE_URL + '/api/formations/');
-//         var formations = await response.json();
-//         formations = formations?.results ?? [];
+         const response = await fetch(BASE_URL + '/api/formations/');
+         var formations = await response.json();
+         formations = formations?.results ?? [];
 
-        const formations = [
-            {
-                id: 1,
-                name: 'Ph.D. in Computational Linguistics',
-                school: 'University of Technology',
-                start_date: '2020-09-01',
-                end_date: null
-            },
-            {
-                id: 2,
-                name: 'Master in Computer Science',
-                school: 'National Polytechnic School',
-                start_date: '2015-09-01',
-                end_date: '2017-06-30'
-            },
-            {
-                id: 3,
-                name: 'Bachelor in Software Engineering',
-                school: 'Institute of Technology',
-                start_date: '2012-09-01',
-                end_date: '2015-06-30'
-            }
-        ];
+//        const formations = [
+//            {
+//                id: 1,
+//                name: 'Ph.D. in Computational Linguistics',
+//                school: 'University of Technology',
+//                start_date: '2020-09-01',
+//                end_date: null
+//            },
+//            {
+//                id: 2,
+//                name: 'Master in Computer Science',
+//                school: 'National Polytechnic School',
+//                start_date: '2015-09-01',
+//                end_date: '2017-06-30'
+//            },
+//            {
+//                id: 3,
+//                name: 'Bachelor in Software Engineering',
+//                school: 'Institute of Technology',
+//                start_date: '2012-09-01',
+//                end_date: '2015-06-30'
+//            }
+//        ];
 
         const container = document.getElementById('formations-container');
         if (!container) {
