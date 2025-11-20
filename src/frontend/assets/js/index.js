@@ -10,17 +10,6 @@ async function loadTechnologies() {
          var technologies = await response.json();
          technologies = technologies?.results ?? [];
 
-//        const technologies = [
-//            { name: 'Django', icon: null },
-//            { name: 'Python', icon: null },
-//            { name: 'Vue.js', icon: null },
-//            { name: 'PostgreSQL', icon: null },
-//            { name: 'Docker', icon: null },
-//            { name: 'NLP', icon: null },
-//            { name: 'Speech Processing', icon: null },
-//            { name: 'Kaldi', icon: null }
-//        ];
-
         const container = document.getElementById('technologies-container');
         if (!container) {
             return;
@@ -28,7 +17,7 @@ async function loadTechnologies() {
 
         container.innerHTML = technologies.map(
             (tech) => `
-                <span class="skill-badge px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium">
+                <span class="skill-badge px-4 py-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 rounded-full text-sm font-medium">
                     ${tech.name}
                 </span>
             `
