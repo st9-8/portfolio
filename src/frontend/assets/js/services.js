@@ -12,46 +12,6 @@ async function loadServices() {
 
         const services = response?.results ?? [];
 
-        // Mock data
-//        const services = [
-//            {
-//                id: 1,
-//                name: 'Web Development',
-//                description: 'Full-stack web application development using Django, Vue.js, and modern technologies. From MVP to production-ready applications.',
-//                image: { file: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop' }
-//            },
-//            {
-//                id: 2,
-//                name: 'API Development',
-//                description: 'RESTful API design and development with Django REST Framework. Scalable, secure, and well-documented APIs.',
-//                image: { file: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop' }
-//            },
-//            {
-//                id: 3,
-//                name: 'NLP Consulting',
-//                description: 'Natural Language Processing solutions for African languages. Speech recognition, text processing, and language modeling.',
-//                image: { file: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=400&h=300&fit=crop' }
-//            },
-//            {
-//                id: 4,
-//                name: 'Technical Writing',
-//                description: 'Clear and comprehensive technical documentation, API references, and user guides for your software projects.',
-//                image: { file: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&h=300&fit=crop' }
-//            },
-//            {
-//                id: 5,
-//                name: 'Code Review & Mentoring',
-//                description: 'Code review, architecture advice, and mentoring for Django and Vue.js projects. Best practices and optimization.',
-//                image: { file: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop' }
-//            },
-//            {
-//                id: 6,
-//                name: 'Research Collaboration',
-//                description: 'Collaboration on computational linguistics research, particularly for African language processing and speech technology.',
-//                image: { file: 'https://images.unsplash.com/photo-1532619187608-e5375cab36aa?w=400&h=300&fit=crop' }
-//            }
-//        ];
-
         const container = document.getElementById('services-container');
 
         if (services.length === 0) {

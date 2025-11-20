@@ -34,54 +34,6 @@ async function loadLectures() {
          var lectures = await response.json();
          lectures = lectures?.results ?? [];
 
-//        const lectures = [
-//            {
-//                id: 1,
-//                name: 'Advanced Web Development with Django',
-//                description: 'Comprehensive course covering Django REST Framework, authentication, deployment, and best practices for building production-ready applications.',
-//                school: 'Tech University',
-//                start_date: '2023-09-01',
-//                end_date: null,
-//                syllabus: '/media/syllabus/django-advanced.pdf'
-//            },
-//            {
-//                id: 2,
-//                name: 'Introduction to Natural Language Processing',
-//                description: 'Foundational course in NLP covering tokenization, language modeling, text classification, and an introduction to transformers.',
-//                school: 'National Polytechnic School',
-//                start_date: '2023-09-01',
-//                end_date: null,
-//                syllabus: '/media/syllabus/nlp-intro.pdf'
-//            },
-//            {
-//                id: 3,
-//                name: 'Full-Stack Web Development Bootcamp',
-//                description: 'Intensive 12-week bootcamp teaching HTML, CSS, JavaScript, Vue.js, Django, and PostgreSQL. Students build complete web applications.',
-//                school: 'Code Academy Africa',
-//                start_date: '2023-01-15',
-//                end_date: '2023-04-15',
-//                syllabus: '/media/syllabus/fullstack-bootcamp.pdf'
-//            },
-//            {
-//                id: 4,
-//                name: 'Speech Processing for African Languages',
-//                description: 'Graduate-level course on speech processing techniques with focus on low-resource African languages. Covers forced alignment, ASR, and TTS.',
-//                school: 'University of Technology',
-//                start_date: '2022-09-01',
-//                end_date: '2023-01-31',
-//                syllabus: '/media/syllabus/speech-processing.pdf'
-//            },
-//            {
-//                id: 5,
-//                name: 'Python Programming for Data Science',
-//                description: 'Introduction to Python with emphasis on data analysis using Pandas, NumPy, and visualization with Matplotlib and Seaborn.',
-//                school: 'Digital Skills Institute',
-//                start_date: '2022-03-01',
-//                end_date: '2022-07-01',
-//                syllabus: '/media/syllabus/python-data-science.pdf'
-//            }
-//        ];
-
         const container = document.getElementById('lectures-container');
         if (!container) {
             return;

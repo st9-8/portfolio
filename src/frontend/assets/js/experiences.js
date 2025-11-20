@@ -31,57 +31,6 @@ async function loadExperiences() {
          var experiences = await response.json();
          experiences = experiences?.results ?? [];
 
-//        const experiences = [
-//            {
-//                id: 1,
-//                title: 'Senior Full-Stack Developer',
-//                organisation: 'Tech Innovations Inc.',
-//                start_date: '2022-01-15',
-//                end_date: null,
-//                description: 'Leading development of web applications using Django and Vue.js. Architecting scalable solutions and mentoring junior developers. Implementing CI/CD pipelines and optimizing application performance.',
-//                contract_type: 'Full-time',
-//                location: 'Remote',
-//                work_type: 'Software Development',
-//                work_place_type: 'Remote'
-//            },
-//            {
-//                id: 2,
-//                title: 'Research Assistant',
-//                organisation: 'University of Technology',
-//                start_date: '2020-09-01',
-//                end_date: '2021-12-31',
-//                description: 'Conducted research on forced alignment systems for African languages. Developed tools for speech processing and phonetic analysis. Published papers on computational linguistics.',
-//                contract_type: 'Contract',
-//                location: 'Yaoundé, Cameroon',
-//                work_type: 'Research',
-//                work_place_type: 'On-site'
-//            },
-//            {
-//                id: 3,
-//                title: 'Web Development Instructor',
-//                organisation: 'Code Academy Africa',
-//                start_date: '2019-03-01',
-//                end_date: '2022-06-30',
-//                description: 'Teaching Django, Python, and web development fundamentals. Creating practical exercises and course materials. Mentoring students through capstone projects.',
-//                contract_type: 'Part-time',
-//                location: 'Douala, Cameroon',
-//                work_type: 'Teaching',
-//                work_place_type: 'Hybrid'
-//            },
-//            {
-//                id: 4,
-//                title: 'Junior Software Developer',
-//                organisation: 'Digital Solutions Ltd',
-//                start_date: '2017-06-01',
-//                end_date: '2019-02-28',
-//                description: 'Developed and maintained web applications using Django and PostgreSQL. Collaborated with cross-functional teams to deliver client projects. Participated in code reviews and agile development processes.',
-//                contract_type: 'Full-time',
-//                location: 'Yaoundé, Cameroon',
-//                work_type: 'Software Development',
-//                work_place_type: 'On-site'
-//            }
-//        ];
-
         const container = document.getElementById('experiences-container');
 
         if (!container) {

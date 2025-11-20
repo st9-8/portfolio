@@ -146,35 +146,6 @@ async function loadPublications() {
          var publications = await response.json();
          publications = publications?.results ?? [];
 
-//        const publications = [
-//            {
-//                id: 1,
-//                name: 'Forced Alignment for Low-Resource African Languages',
-//                authors: 'Stéphane M., Dr. Jane Doe, Prof. John Smith',
-//                abstract: 'This paper presents a novel approach to forced alignment for low-resource African languages using transfer learning from high-resource languages...',
-//                link: 'https://arxiv.org/example1',
-//                pub_date: '2024-03-15',
-//                full_document: '/media/publications/paper1.pdf'
-//            },
-//            {
-//                id: 2,
-//                name: 'Speech Processing Tools for Wolof Language',
-//                authors: 'Stéphane M., Dr. Marie Claire',
-//                abstract: 'We introduce a comprehensive toolkit for processing Wolof speech, including phonetic transcription, forced alignment, and acoustic modeling...',
-//                link: 'https://arxiv.org/example2',
-//                pub_date: '2023-11-20',
-//                full_document: '/media/publications/paper2.pdf'
-//            },
-//            {
-//                id: 3,
-//                name: 'Improving ASR for Fulfulde Using wav2vec 2.0',
-//                authors: 'Stéphane M., Dr. Ahmed B., Prof. Sarah L.',
-//                abstract: 'This study explores the application of wav2vec 2.0 for automatic speech recognition in Fulfulde, demonstrating significant improvements...',
-//                link: 'https://arxiv.org/example3',
-//                pub_date: '2023-06-10',
-//                full_document: '/media/publications/paper3.pdf'
-//            }
-//        ];
 
         const container = document.getElementById('publications-container');
         if (!container) {

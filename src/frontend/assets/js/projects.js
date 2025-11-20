@@ -10,57 +10,6 @@ async function loadProjects() {
          var projects = await response.json();
          projects = projects?.results ?? [];
 
-//        const projects = [
-//            {
-//                id: 1,
-//                name: 'AfroEvent Vibes',
-//                description: 'Mobile event management application for African cultural events. Built with Django REST Framework and Flutter.',
-//                link: 'https://projects.example.com/afroevent',
-//                technologies: 'Django, Flutter, PostgreSQL, Docker',
-//                image: 'https://images.unsplash.com/photo-1523475472560-d2df97ec485c?w=800&h=600&fit=crop'
-//            },
-//            {
-//                id: 2,
-//                name: 'Connectivo Dashboard',
-//                description: 'Real-time analytics dashboard application for business intelligence. Features data visualization and reporting.',
-//                link: 'https://projects.example.com/connectivo',
-//                technologies: 'Vue.js, Django, Chart.js, Celery',
-//                image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop'
-//            },
-//            {
-//                id: 3,
-//                name: 'Wolof Forced Alignment Tool',
-//                description: 'Speech processing tool for Wolof language using Montreal Forced Aligner. Research project for phonetic analysis.',
-//                link: 'https://projects.example.com/wolof-alignment',
-//                technologies: 'Python, Kaldi, MFA, Praat',
-//                image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop'
-//            },
-//            {
-//                id: 4,
-//                name: 'Blog Translation System',
-//                description: 'Automated blog content translation and reformulation using NLP. Supports multiple African languages.',
-//                link: 'https://projects.example.com/blog-translator',
-//                technologies: 'Django, Nuxt.js, Transformers, Redis',
-//                image: 'https://images.unsplash.com/photo-1522199710521-72d69614c702?w=800&h=600&fit=crop'
-//            },
-//            {
-//                id: 5,
-//                name: 'E-Learning Platform',
-//                description: 'Complete e-learning platform with course management, video streaming, and progress tracking.',
-//                link: 'https://projects.example.com/elearning',
-//                technologies: 'Django, Vue.js, PostgreSQL, S3',
-//                image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&h=600&fit=crop'
-//            },
-//            {
-//                id: 6,
-//                name: 'Speech Recognition API',
-//                description: 'RESTful API for speech recognition supporting Fulfulde and other West African languages.',
-//                link: 'https://projects.example.com/speech-api',
-//                technologies: 'FastAPI, wav2vec2, Docker, Redis',
-//                image: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800&h=600&fit=crop'
-//            }
-//        ];
-
         const container = document.getElementById('projects-container');
         if (!container) {
             return;
