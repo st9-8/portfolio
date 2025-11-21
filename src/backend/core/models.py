@@ -162,7 +162,7 @@ class Service(models.Model):
         return self.name
 
     class Meta:
-        ordering = ('-id',)
+        ordering = ('id',)
 
 
 class Lecture(models.Model):
